@@ -11,7 +11,7 @@ function App() {
       <BrowserRouter>
       <Nav/>
         <Routes>
-          <Route path="/" element={<Home/>} />
+          <Route path="/" exact element={<Home/>} />
           <Route path="translate" element={<Translate/>} />
           <Route path="grammar" element={<Grammar/>} />
           <Route path="*" element={<Page404/>} />

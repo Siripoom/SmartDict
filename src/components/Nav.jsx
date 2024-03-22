@@ -53,7 +53,7 @@ export default function Nav() {
         </div>
         <div className="navbar-end">
           <button className="btn">SignIn</button>
-          <button className="btn">SignUp</button>
+          {/* <button className="btn">SignUp</button> */}
         </div>
       </div>
     </>
