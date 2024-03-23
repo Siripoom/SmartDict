@@ -1,16 +1,15 @@
 import auth from "../firebase_config";
-import { singInWithPopup, GoogleAuthProvider, signOut } from "firebase/auth";
+import { signInWithPopup, GoogleAuthProvider, signOut } from "firebase/auth";
 import { useState, useEffect } from "react";
-import Nav from "../components/Nav";
-import google from '../assets/google.jpg';
-import faceboox from '../assets/faceboox.jpg';
-import form from '../css/form.css'
+import facebook from "../assets/facebook.jpg";
+import google from "../assets/google.jpg";
+import "../css/form.css";
 
 export default function SignIn() {
-    const [userInfo, setUserInfo] = userState(null);
+    const [userInfo, setUserInfo] = useState(null);
 
     useEffect(() => {
-        auth.onAuthStateChange((user) => {
+        auth.onAuthStateChanged((user) => {
             if (user) {
                 setUserInfo(user);
             } else {
@@ -21,8 +20,8 @@ export default function SignIn() {
 
     const login = () => {
         const provider = GoogleAuthProvider();
-        auth.useDeviceLanguege();
-        singInWithPopup(auth, provider)
+        auth.useDeviceLanguage();
+        signInWithPopup(auth, provider)
             .then((result) => { })
             .catch(err => {
                 alert(err);
@@ -38,40 +37,33 @@ export default function SignIn() {
     }
 
     return (
-        <div className="container-fluid">
-            <Nav />
-            <div className="col align-self-center">
-                <h1>Signin</h1>
-                <div className="icon" style={form}>
-                    <img src={faceboox} alt="faceboox" />
-                    <button type="button" class="btn btn-dark" onClick={login}>Facebook</button>
+        <div>
+            <div className="Box">
+                <h1>Sign-in</h1>
+                <div className="icon" >
+                    <button type="button" className="btn btn-dark" onClick={login}><img src={facebook} alt="faceboox" />Facebook</button>
+                    <button type="button" className="btn btn-dark" onClick={login}> <img src={google} alt="google" />Google</button>
                 </div>
-                <div className="icon" style={form}>
-                    <img src={google} alt="google" />
-                    <button type="button" class="btn btn-dark" onClick={login}>Google</button>
+                {/* <div className="icon">
+                   
+                   
+                </div> */}
+                <div className="mb-3">
+                    <input type="text" name="txtUsername" size="50" maxLength="50" placeholder="Enter Your Username"
+                        className="form-control" />
                 </div>
                 <div className="mb-3">
-                    <input type="text" name="txtUsername" size="25" maxlength="25" placeholder="Enter Your Username"
-                        class="form-control" />
+                    <input type="password" name="txtPassword" size="50" maxLength="50" placeholder="Enter Your Password"
+                        className="form-control" />
                 </div>
-                <div className="mb-3">
-                    <input type="password" name="txtPassword" size="25" maxlength="25" placeholder="Enter Your Password"
-                        class="form-control" />
-                </div>
-                <div className="icon" style={form}>
-                    <button type="button" class="btn btn-light" >Cancel</button>
-                    <button type="button" class="btn btn-light" onClick={login}>Sign-in</button>
+                <div className="icon">
+                    <button type="button" className="btn btn-light" >Cancel</button>
+                    <button type="button" className="btn btn-light" onClick={login}>Sign-in</button>
                 </div>
                 <div className="text-center">
-                    <Link to = " ">No account?</Link> 
+                    No account?
                 </div>
             </div>
-
-
-
-
-
-
         </div>
     )
 

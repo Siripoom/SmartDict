@@ -53,8 +53,13 @@ export default function Nav() {
           </ul>
         </div>
         <div className="navbar-end">
+<<<<<<< HEAD
           <Link to= "SignIn"><button className="btn">SignIn</button></Link>
           <button className="btn">SignUp</button>
+=======
+          <button className="btn">SignIn</button>
+          {/* <button className="btn">SignUp</button> */}
+>>>>>>> 9a086e7e18a30c22d6a6f2d09a5c13c52a710993
         </div>
       </div>
     </>
