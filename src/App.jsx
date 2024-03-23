@@ -5,6 +5,7 @@ import Nav from  "./components/Nav"
 import Home from "./pages/Home"
 import Translate from './pages/Translate'
 import Grammar from './pages/Grammar'
+import Footer from './components/Footer'
 function App() {
   return (
     <>
@@ -16,6 +17,7 @@ function App() {
           <Route path="grammar" element={<Grammar/>} />
           <Route path="*" element={<Page404/>} />
         </Routes>
+        
       </BrowserRouter>
     </>
   )
