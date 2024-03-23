@@ -1,6 +1,9 @@
-import {Link} from "react-router-dom"
+import { Link } from "react-router-dom"
 
-export default function Nav() {
+export default function Nav(props) {
+
+  const user = props.user;
+
   return (
     <>
       <div className="navbar bg-base-100">
@@ -37,29 +40,39 @@ export default function Nav() {
               </li>
             </ul>
           </div>
-          <Link  to="/" className="btn btn-ghost text-xl">SmartDict</Link>
+          <Link to="/" className="btn btn-ghost text-xl">SmartDict</Link>
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1">
-          <li>
-                <Link to="/">Home</Link>
-              </li>
-              <li>
-                <Link to="translate">Translate</Link>
-              </li>
-              <li>
-                <Link to="grammar">Grammar</Link>
-              </li>
+            <li>
+              <Link to="/">Home</Link>
+            </li>
+            <li>
+              <Link to="translate">Translate</Link>
+            </li>
+            <li>
+              <Link to="grammar">Grammar</Link>
+            </li>
           </ul>
         </div>
-        <div className="navbar-end">
-<<<<<<< HEAD
-          <Link to= "SignIn"><button className="btn">SignIn</button></Link>
-          <button className="btn">SignUp</button>
-=======
-          <button className="btn">SignIn</button>
-          {/* <button className="btn">SignUp</button> */}
->>>>>>> 9a086e7e18a30c22d6a6f2d09a5c13c52a710993
+        <div className="navbar-end d-flex">
+          {props.user ? (
+            <div className="dropdown">
+
+              <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                {user.displayName}
+              </button>
+              <ul class="dropdown-menu">
+                <li><Link to = " ">Wordlish</Link></li>
+                <li><button className="btn" onClick={props.logout}>Sign-out</button></li>
+              </ul>
+              
+            </div>
+          ) : (
+            <div>
+              <Link to="SignIn"><button className="btn">SignIn</button></Link>
+            </div>
+          )}
         </div>
       </div>
     </>
