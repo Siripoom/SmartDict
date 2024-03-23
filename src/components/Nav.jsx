@@ -1,4 +1,5 @@
 import {Link} from "react-router-dom"
+
 export default function Nav() {
   return (
     <>
@@ -52,7 +53,7 @@ export default function Nav() {
           </ul>
         </div>
         <div className="navbar-end">
-          <button className="btn">SignIn</button>
+          <Link to= "SignIn"><button className="btn">SignIn</button></Link>
           <button className="btn">SignUp</button>
         </div>
       </div>

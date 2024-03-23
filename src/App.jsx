@@ -5,6 +5,7 @@ import Nav from  "./components/Nav"
 import Home from "./pages/Home"
 import Translate from './pages/Translate'
 import Grammar from './pages/Grammar'
+import SignIn from './pages/SignIn'
 function App() {
   return (
     <>
@@ -14,6 +15,7 @@ function App() {
           <Route path="/" element={<Home/>} />
           <Route path="translate" element={<Translate/>} />
           <Route path="grammar" element={<Grammar/>} />
+          <Route path="SignIn" element={<SignIn />} />
           <Route path="*" element={<Page404/>} />
         </Routes>
       </BrowserRouter>
