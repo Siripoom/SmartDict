@@ -6,7 +6,10 @@ import Home from "./pages/Home"
 import Translate from './pages/Translate'
 import Grammar from './pages/Grammar'
 import SignIn from './pages/SignIn'
+import Register from './pages/Register'
+
 function App() {
+
   return (
     <>
       <BrowserRouter>
@@ -16,6 +19,7 @@ function App() {
           <Route path="translate" element={<Translate/>} />
           <Route path="grammar" element={<Grammar/>} />
           <Route path="SignIn" element={<SignIn />} />
+          <Route path="/Register" element={<Register />} />
           <Route path="*" element={<Page404/>} />
         </Routes>
       </BrowserRouter>

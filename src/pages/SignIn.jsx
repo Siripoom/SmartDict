@@ -1,22 +1,24 @@
 import auth from "../firebase_config";
 import { signInWithPopup, GoogleAuthProvider, signOut } from "firebase/auth";
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 // import facebook from "../assets/facebook.png";
 // import google from "../assets/google.png";
 import "../css/form.css";
-import ProSign from "./ProSign";
 import Nav from "../components/Nav";
-import { Navigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 export default function SignIn() {
     const [userInfo, setUserInfo] = useState(null);
 
-    useEffect(() => {
+    const navigate = useNavigate();
+
+    useEffect(() => {   
         auth.onAuthStateChanged((user) => {
             if (user) {
                 setUserInfo(user);
                 console.log("Auth" , user)
-                return <Navigate to="/" />
+                
             } else {
                 setUserInfo(null);
                 window.sessionStorage.clear();
@@ -29,7 +31,7 @@ export default function SignIn() {
         auth.useDeviceLanguage();
         signInWithPopup(auth, provider)
             .then((result) => {
-                
+                return <navigate to="/" />
             })
             .catch(err => {
                 alert(err);
@@ -44,43 +46,43 @@ export default function SignIn() {
             })
     }
 
+    const clearPathAndNavigate = () => {
+        navigate('/Register'); // Replace with your desired path
+      };
+    
+
     return (
         <div>
             <Nav user={userInfo} login={login} logout={logout} />
         <div className="body">
-            
             <div className="Box">
                 <h1 className="text-center">Sign-in</h1>
                 <br />
                 <div className="icon">
                     <div className="logo" >
-                    {/* <img src={facebook} alt="faceboox" /> */}
                     <button type="button" className="btn btn-primary"><i className='bx bxl-facebook-circle'></i>Facebook</button>
                 </div>
                 <div className="logo">
-                   {/* <img src={google} alt="google" /> */}
                    <button type="button" className="btn btn-primary " onClick={login}><i className='bx bxl-google' ></i> Google</button>
                 </div>
                 </div>
                 <br />
                 <div className="mb-3">
-                    <input type="text" name="txtUsername" size="50" maxLength="50" placeholder="Enter Your Username"
-                        className="form-control" />
+                    <input type="text" placeholder="Enter username" className="input input-bordered input-info w-full max-w-xs" size={40} maxLength={50} />
                 </div>
                 <div className="mb-3">
-                    <input type="password" name="txtPassword" size="50" maxLength="50" placeholder="Enter Your Password"
-                        className="form-control" />
+                    <input type="password" placeholder="Enter password" className="input input-bordered input-info w-full max-w-xs" />
                 </div>
                 <div className="icon">
                     <button type="button" className="btn btn-dark" >Cancel</button>
                     <button type="button" className="btn btn-dark" >Sign-in</button>
                 </div>
                 <div className="text-center">
-                    No account?
+                    <button onClick={clearPathAndNavigate}>On account?</button>
                 </div>
             </div>
         </div>
-        </div>
+    </div>
     )
 
 }
