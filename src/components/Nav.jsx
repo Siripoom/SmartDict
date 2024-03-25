@@ -1,5 +1,11 @@
-import {Link} from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom"; // Import useNavigate instead of useHistory
+import { useState } from "react";
+
 export default function Nav() {
+ 
+  const navigate = useNavigate(); // Use useNavigate hook
+
+
   return (
     <>
       <div className="navbar bg-base-100">
@@ -21,6 +27,7 @@ export default function Nav() {
                 />
               </svg>
             </div>
+
             <ul
               tabIndex={0}
               className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
@@ -36,19 +43,21 @@ export default function Nav() {
               </li>
             </ul>
           </div>
-          <Link  to="/" className="btn btn-ghost text-xl">SmartDict</Link>
+          <Link to="/" className="btn btn-ghost text-xl">
+            SmartDict
+          </Link>
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1">
-          <li>
-                <Link to="/">Home</Link>
-              </li>
-              <li>
-                <Link to="translate">Translate</Link>
-              </li>
-              <li>
-                <Link to="grammar">Grammar</Link>
-              </li>
+            <li>
+              <Link to="/">Home</Link>
+            </li>
+            <li>
+              <Link to="translate">Translate</Link>
+            </li>
+            <li>
+              <Link to="grammar">Grammar</Link>
+            </li>
           </ul>
         </div>
         <div className="navbar-end">
