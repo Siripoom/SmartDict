@@ -2,38 +2,58 @@ import "../css/form.css";
 
 export default function Register() {
 
-    return(
+    return (
         <div>
             <div className="body">
-            <div className="Box">
-                <h1 className="text-center">Register</h1>
-                <br />
-                <div className="mb-3">
-                    <input type="text" name="txtUsername" size="50" maxLength="50" placeholder="Enter Your Username"
-                        className="form-control" />
-                </div>
-                <div className="mb-3">
-                    <input type="password" name="txtPassword" size="50" maxLength="50" placeholder="Enter Your Password"
-                        className="form-control" />
-                </div>
-                <div className="mb-3">
-                    <input type="text" name="mail" size="50" maxLength="50" placeholder="Email"
-                        className="form-control" />
-                </div>
-                <div className="mb-3">
-                    <input type="text" name="Fname" size="50" maxLength="50" placeholder="First name"
-                        className="form-control" />
-                </div>
-                <div className="mb-3">
-                    <input type="text" name="Lname" size="50" maxLength="50" placeholder="Last name"
-                        className="form-control" />
-                </div>
-                <div className="icon">
-                    <button type="reset" className="btn btn-dark" >Cancel</button>
-                    <button type="submit" className="btn btn-dark" >Submit</button>
+                <div className="Box">
+                    <h1 className="text-center">Register</h1>
+                    <br />
+                    <div className="mb-3">
+                        <label className="form-control w-full max-w-xs">
+                            <div className="label">
+                                <span className="label-text">Username</span>
+                            </div>
+                            <input type="text" placeholder="Type here" className="input input-bordered input-md input-info w-full max-w-xs" size={40} maxLength={50} />
+                        </label>
+                    </div>
+                    <div className="mb-3">
+                        <label className="form-control w-full max-w-xs">
+                            <div className="label">
+                                <span className="label-text">Password</span>
+                            </div>
+                            <input type="text" placeholder="Type here" className="input input-bordered input-md input-info w-full max-w-xs" size={40} maxLength={50} />
+                        </label>
+                    </div>
+                    <div className="mb-3">
+                        <label className="form-control w-full max-w-xs">
+                            <div className="label">
+                                <span className="label-text">Email</span>
+                            </div>
+                            <input type="text" placeholder="Type here" className="input input-bordered input-md input-info w-full max-w-xs" size={40} maxLength={50} />
+                        </label>
+                    </div>
+                    <div className="mb-3">
+                        <label className="form-control w-full max-w-xs">
+                            <div className="label">
+                                <span className="label-text">First name</span>
+                            </div>
+                            <input type="text" placeholder="Type here" className="input input-bordered input-md input-info w-full max-w-xs" size={40} maxLength={50} />
+                        </label>
+                    </div>
+                    <div className="mb-3">
+                        <label className="form-control w-full max-w-xs">
+                            <div className="label">
+                                <span className="label-text">Last name</span>
+                            </div>
+                            <input type="text" placeholder="Type here" className="input input-bordered input-md input-info w-full max-w-xs" size={40} maxLength={50}/>
+                        </label>
+                    </div>
+                    <div className="btnRig">
+                        <button type="reset" className="btn btn-error" >Cancel</button>
+                        <button type="submit" className="btn btn-success" >Submit</button>
+                    </div>
                 </div>
             </div>
-        </div>
 
         </div>
     )

@@ -60,10 +60,10 @@ export default function SignIn() {
                 <br />
                 <div className="icon">
                     <div className="logo" >
-                    <button type="button" className="btn btn-primary"><i className='bx bxl-facebook-circle'></i>Facebook</button>
+                    <button type="button" className="btn btn-neutral"><i className='bx bxl-facebook-circle'></i>Facebook</button>
                 </div>
                 <div className="logo">
-                   <button type="button" className="btn btn-primary " onClick={login}><i className='bx bxl-google' ></i> Google</button>
+                   <button type="button" className="btn btn-neutral" onClick={login}><i className='bx bxl-google' ></i> Google</button>
                 </div>
                 </div>
                 <br />
@@ -74,8 +74,8 @@ export default function SignIn() {
                     <input type="password" placeholder="Enter password" className="input input-bordered input-info w-full max-w-xs" />
                 </div>
                 <div className="icon">
-                    <button type="button" className="btn btn-dark" >Cancel</button>
-                    <button type="button" className="btn btn-dark" >Sign-in</button>
+                    <button type="button" className="btn " >Cancel</button>
+                    <button type="button" className="btn " >Sign-in</button>
                 </div>
                 <div className="text-center">
                     <button onClick={clearPathAndNavigate}>On account?</button>
