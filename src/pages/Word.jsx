@@ -1,5 +1,5 @@
 import { useState, useEffect, useHistory } from "react";
-import WordDefinition from "../components/WordShow";
+import WordDefinition from "../apis/WordShow";
 import { AiOutlineArrowRight } from "react-icons/ai";
 import { useParams } from "react-router-dom";
 import axios from "axios"; // Import Axios

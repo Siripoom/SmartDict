@@ -50,7 +50,7 @@ const WordDefinition = ({ word }) => {
         ))}
         <h2 className="text-2xl">synonyms</h2>
         {wordInfo.results.map((result, index) => (
-          <li key={index}>{result.synonyms}</li>
+          <p key={index}>{result.synonyms}</p>
         ))}
           <div className="card-actions justify-end">
             <button className="btn btn-primary">
