@@ -57,16 +57,14 @@ export default function Nav(props) {
         </div>
         <div className="navbar-end d-flex">
           {props.user ? (
-            <div className="dropdown">
-              <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                {user.displayName}
-              </button>
-              <ul class="dropdown-menu">
-                <li><Link to = " ">Wordlish</Link></li>
-                <li><button className="btn" onClick={props.logout}>Sign-out</button></li>
-              </ul>
-              
-            </div>
+          <div className="dropdown">
+            <div tabIndex={0} role="button" className="btn m-1">{user.displayName}</div>
+            <ul tabIndex={0} className="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52">
+              <li><Link to = " ">Profile</Link></li>
+              <li><Link to = " ">Wordlish</Link></li>
+              <li><button className="btn" onClick={props.logout}>logout</button></li>
+            </ul>
+          </div>
           ) : (
             <div>
               <Link to="SignIn"><button className="btn">SignIn</button></Link>

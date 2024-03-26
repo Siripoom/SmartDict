@@ -18,7 +18,6 @@ export default function SignIn() {
             if (user) {
                 setUserInfo(user);
                 console.log("Auth" , user)
-                
             } else {
                 setUserInfo(null);
                 window.sessionStorage.clear();
@@ -31,7 +30,7 @@ export default function SignIn() {
         auth.useDeviceLanguage();
         signInWithPopup(auth, provider)
             .then((result) => {
-                return <navigate to="/" />
+                navigate('/')
             })
             .catch(err => {
                 alert(err);
@@ -47,7 +46,7 @@ export default function SignIn() {
     }
 
     const clearPathAndNavigate = () => {
-        navigate('/Register'); // Replace with your desired path
+        navigate('/Register');
       };
     
 
@@ -68,13 +67,13 @@ export default function SignIn() {
                 </div>
                 <br />
                 <div className="mb-3">
-                    <input type="text" placeholder="Enter username" className="input input-bordered input-info w-full max-w-xs" size={40} maxLength={50} />
+                    <input type="text" placeholder="Enter username" className="input input-bordered  w-full max-w-xs" size={40} maxLength={50} />
                 </div>
                 <div className="mb-3">
-                    <input type="password" placeholder="Enter password" className="input input-bordered input-info w-full max-w-xs" />
+                    <input type="password" placeholder="Enter password" className="input input-bordered w-full max-w-xs" />
                 </div>
                 <div className="icon">
-                    <button type="button" className="btn " >Cancel</button>
+                    <button type="button" className="btn " onClick={() => navigate('/')} >Cancel</button>
                     <button type="button" className="btn " >Sign-in</button>
                 </div>
                 <div className="text-center">
