@@ -1,11 +1,17 @@
-import { Link, useNavigate } from "react-router-dom"; // Import useNavigate instead of useHistory
-import { useState } from "react";
+import { Link } from "react-router-dom"
+import auth from "../firebase_config";
+import { signInWithPopup, GoogleAuthProvider, signOut } from "firebase/auth";
+import { useNavigate } from "react-router-dom";
+export default function Nav(props) {
 
-export default function Nav() {
- 
-  const navigate = useNavigate(); // Use useNavigate hook
-
-
+  const user = props.user;
+  const logout = () => {
+    signOut(auth)
+        .then(() => { })
+        .catch(err => {
+            alert(err);
+        })
+}
   return (
     <>
       <div className="navbar bg-base-100">
@@ -43,9 +49,7 @@ export default function Nav() {
               </li>
             </ul>
           </div>
-          <Link to="/" className="btn btn-ghost text-xl">
-            SmartDict
-          </Link>
+          <Link to="/" className="btn btn-ghost text-xl">SmartDict</Link>
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1">
@@ -60,9 +64,21 @@ export default function Nav() {
             </li>
           </ul>
         </div>
-        <div className="navbar-end">
-          <button className="btn">SignIn</button>
-          {/* <button className="btn">SignUp</button> */}
+        <div className="navbar-end d-flex">
+          {props.user ? (
+          <div className="dropdown">
+            <div tabIndex={0} role="button" className="btn m-1">{user.displayName}</div>
+            <ul tabIndex={0} className="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52">
+              <li><Link to = " ">Profile</Link></li>
+              <li><Link to = " ">Wordlish</Link></li>
+              <li><button className="btn" onClick={logout}>logout</button></li>
+            </ul>
+          </div>
+          ) : (
+            <div>
+              <Link to="SignIn"><button className="btn">SignIn</button></Link>
+            </div>
+          )}
         </div>
       </div>
     </>
