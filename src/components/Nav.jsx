@@ -34,6 +34,9 @@ export default function Nav() {
               <li>
                 <Link to="grammar">Grammar</Link>
               </li>
+              <li>
+                <Link to="about">About</Link>
+              </li>
             </ul>
           </div>
           <Link  to="/" className="btn btn-ghost text-xl">SmartDict</Link>
@@ -48,6 +51,9 @@ export default function Nav() {
               </li>
               <li>
                 <Link to="grammar">Grammar</Link>
+              </li>
+              <li>
+                <Link to="about">About</Link>
               </li>
           </ul>
         </div>
