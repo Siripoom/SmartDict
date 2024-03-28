@@ -47,21 +47,27 @@ export default function Nav(props) {
               <li>
                 <Link to="grammar">Grammar</Link>
               </li>
+              <li>
+                <Link to="about">About</Link>
+              </li>
             </ul>
           </div>
           <Link to="/" className="btn btn-ghost text-xl">SmartDict</Link>
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1">
-            <li>
-              <Link to="/">Home</Link>
-            </li>
-            <li>
-              <Link to="translate">Translate</Link>
-            </li>
-            <li>
-              <Link to="grammar">Grammar</Link>
-            </li>
+          <li>
+                <Link to="/">Home</Link>
+              </li>
+              <li>
+                <Link to="translate">Translate</Link>
+              </li>
+              <li>
+                <Link to="grammar">Grammar</Link>
+              </li>
+              <li>
+                <Link to="about">About</Link>
+              </li>
           </ul>
         </div>
         <div className="navbar-end d-flex">

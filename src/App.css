@@ -1,3 +1,70 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* .section-white {
+    background: #fff;
+    padding: 70px 0;
+}
+
+.card {
+        display: flex;
+        justify-content: "space-around";
+        align-items: "center";
+}
+
+.card {
+    display: flex;
+    align-items: center;
+}
+
+.card {
+    background: #f4f5f6;
+    text-align: center;
+    margin: 20px 0;
+    padding: 50px 20px 40px 20px;
+    border-radius: 8px 8px;
+    -webkit-transition: all 0.25s ease-in-out;
+    -moz-transition: all 0.25s ease-in-out;
+    -ms-transition: all 0.25s ease-in-out;
+    -o-transition: all 0.25s ease-in-out;
+    transition: all 0.25s ease-in-out;
+}
+
+.card:hover {
+    background: #3956de;
+    color: #fff;
+}
+
+.p-4 h4 {
+    margin: 20px 0 1px 0 !important;
+    font-size: 18px;
+    font-weight: 700;
+    text-transform: uppercase;
+    -webkit-transition: all 0.25s ease-in-out;
+    -ms-transition: all 0.25s ease-in-out;
+    transition: all 0.25s ease-in-out;
+}
+
+.section-subtitle {
+    white-space: pre-line;
+}
+
+.card:hover h3 {
+    color: #ddd;
+}
+
+.p-4 {
+    display: block;
+    margin-bottom: 0;
+}
+
+.p-4 p {
+    color: acacac;
+    font-style: italic;
+}
+
+.section-subtitle {
+    color: acacac;
+    font-style: italic;
+} */
