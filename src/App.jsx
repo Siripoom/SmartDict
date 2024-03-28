@@ -4,7 +4,7 @@ import About from './pages/About'
 import { BrowserRouter,Routes,Route } from 'react-router-dom'
 import Page404 from './pages/Page404'
 import Nav from  "./components/Nav"
-
+import Home from './pages/home'
 import Translate from './pages/Translate'
 import Grammar from './pages/Grammar'
 import Footer from './components/Footer'
