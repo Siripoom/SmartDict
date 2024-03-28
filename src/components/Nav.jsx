@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom"
-import auth from "../firebase_config";
+import {auth} from "../firebase_config";
 import { signInWithPopup, GoogleAuthProvider, signOut } from "firebase/auth";
 import { useNavigate } from "react-router-dom";
 export default function Nav(props) {

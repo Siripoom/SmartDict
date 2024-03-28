@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-.section-white {
+/* .section-white {
     background: #fff;
     padding: 70px 0;
 }
@@ -67,4 +67,4 @@
 .section-subtitle {
     color: acacac;
     font-style: italic;
-}
+} */

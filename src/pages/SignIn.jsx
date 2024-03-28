@@ -1,4 +1,4 @@
-import auth from "../firebase_config";
+import {auth} from "../firebase_config";
 import { signInWithPopup, GoogleAuthProvider, signOut } from "firebase/auth";
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
@@ -44,7 +44,7 @@ export default function SignIn(props) {
     return (
         <div>
             {/* <Nav user={userInfo} login={login} logout={logout} /> */}
-        <div className="body">
+        <div className="body my-5">
             <div className="Box">
                 <h1 className="text-center">Sign-in</h1>
                 <br />
