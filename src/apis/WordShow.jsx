@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { AiFillHeart } from "react-icons/ai";
 import axios from "axios";
 
-const WordDefinition = ({ word }) => {
+const WordShow = ({ word }) => {
   const [wordInfo, setwordInfo] = useState(null);
   const [error, setError] = useState(null);
 
@@ -63,4 +63,4 @@ const WordDefinition = ({ word }) => {
   );
 };
 
-export default WordDefinition;
+export default WordShow;

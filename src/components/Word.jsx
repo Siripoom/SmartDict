@@ -1,9 +1,8 @@
 import { useState, useEffect, useHistory } from "react";
-import WordDefinition from "../apis/WordShow";
+import WordShow from "../apis/WordShow";
 import { AiOutlineArrowRight } from "react-icons/ai";
 import { useParams } from "react-router-dom";
 import axios from "axios"; // Import Axios
-import "./style/word.css";
 function Word() {
   
   const [wordData, setWordData] = useState(null); // State to store word data
@@ -49,7 +48,7 @@ function Word() {
         </div>
         <div className="divider"></div>
         <div className="ggrid flex-grow h-84 card  rounded-box place-items-center justify-center">
-        <WordDefinition word={searchTerm} />
+        <WordShow word={searchTerm} />
         </div>
       </div>
     </>

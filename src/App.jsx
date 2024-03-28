@@ -6,11 +6,11 @@ import Home from "./pages/Home"
 import Translate from './pages/Translate'
 import Grammar from './pages/Grammar'
 import Footer from './components/Footer'
-import Word from './pages/Word'
+
 import SignIn from './pages/SignIn'
 import Register from './pages/Register'
 import {useState,useEffect} from 'react'
-import auth  from "../src/firebase_config";
+import {auth}  from "../src/firebase_config";
 import { signInWithPopup, GoogleAuthProvider, signOut } from "firebase/auth";
 import { useNavigate } from "react-router-dom";
 function App() {

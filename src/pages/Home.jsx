@@ -1,12 +1,11 @@
+import Hero from '../components/Hero'
+import Word from '../components/Word'
 
-import Hero from "../components/Hero"
-import Footer from "../components/Footer"
-import Word from "./Word"
 export default function Home(){
     return(
         <div className="container">
-            <Hero/>
-            <Word/>
+           <Hero/>
+           <Word/>
         </div>
     )
 }
