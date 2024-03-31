@@ -1,17 +1,16 @@
-import { Link } from "react-router-dom"
-import {auth} from "../firebase_config";
+import { Link } from "react-router-dom";
+import { auth } from "../firebase_config";
 import { signInWithPopup, GoogleAuthProvider, signOut } from "firebase/auth";
 import { useNavigate } from "react-router-dom";
 export default function Nav(props) {
-
   const user = props.user;
   const logout = () => {
     signOut(auth)
-        .then(() => { })
-        .catch(err => {
-            alert(err);
-        })
-}
+      .then(() => {})
+      .catch((err) => {
+        alert(err);
+      });
+  };
   return (
     <>
       <div className="navbar bg-base-100">
@@ -52,37 +51,61 @@ export default function Nav(props) {
               </li>
             </ul>
           </div>
-          <Link to="/" className="btn btn-ghost text-xl">SmartDict</Link>
+          <Link to="/" className="btn btn-ghost text-xl">
+            SmartDict
+          </Link>
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1">
-          <li>
-                <Link to="/">Home</Link>
-              </li>
-              <li>
-                <Link to="translate">Translate</Link>
-              </li>
-              <li>
-                <Link to="grammar">Grammar</Link>
-              </li>
-              <li>
-                <Link to="about">About</Link>
-              </li>
+            <li>
+              <Link to="/">Home</Link>
+            </li>
+            <li>
+              <Link to="translate">Translate</Link>
+            </li>
+            <li>
+              <Link to="grammar">Grammar</Link>
+            </li>
+            <li>
+              <Link to="about">About</Link>
+            </li>
           </ul>
         </div>
         <div className="navbar-end d-flex">
           {props.user ? (
-          <div className="dropdown">
-            <div tabIndex={0} role="button" className="btn m-1">{user.displayName}</div>
-            <ul tabIndex={0} className="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52">
-              <li><Link to = " ">Profile</Link></li>
-              <li><Link to = " ">Wordlish</Link></li>
-              <li><button className="btn" onClick={logout}>logout</button></li>
-            </ul>
-          </div>
+            <>
+              <div className="avatar mx-3">
+                <div className="w-12 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
+                  <img src={user.photoURL} />
+                </div>
+              </div>
+              <div className="dropdown dropdown-end dropdown-hover">
+                <div tabIndex={0} role="button" className="btn m-1">
+                  {user.displayName}
+                </div>
+                <ul
+                  tabIndex={0}
+                  className="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52"
+                >
+                  <li>
+                    <Link to=" ">Profile</Link>
+                  </li>
+                  <li>
+                    <Link to=" ">Wordlish</Link>
+                  </li>
+                  <li>
+                    <button className="btn" onClick={logout}>
+                      logout
+                    </button>
+                  </li>
+                </ul>
+              </div>
+            </>
           ) : (
             <div>
-              <Link to="SignIn"><button className="btn">SignIn</button></Link>
+              <Link to="SignIn">
+                <button className="btn">SignIn</button>
+              </Link>
             </div>
           )}
         </div>

@@ -45,10 +45,11 @@ const WordShow = ({ word }) => {
 
           {/* <p className="text-lx">{wordInfo.results[1].partOfSpeech}</p> */}
           {/* <p>{wordInfo.results[].definition}</p> */}
+          <h2 className="text-2xl">Definition</h2>
           {wordInfo.results.map((result, index) => (
           <li key={index}>{result.definition} /{result.partOfSpeech}/</li>
         ))}
-        <h2 className="text-2xl">synonyms</h2>
+        <h2 className="text-2xl">Synonyms</h2>
         {wordInfo.results.map((result, index) => (
           <p key={index}>{result.synonyms}</p>
         ))}
