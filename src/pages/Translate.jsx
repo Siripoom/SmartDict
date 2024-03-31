@@ -1,5 +1,11 @@
-export default function Translate(){
-    return(
-        <h1>Translate</h1>
-    )
+
+import Trans from "../apis/Trans";
+
+export default function Translate() {
+  return (
+    <>
+    <Trans/>
+    
+    </>
+  );
 }
