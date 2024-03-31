@@ -1,5 +1,14 @@
-export default function Translate(){
-    return(
-        <h1>Translate</h1>
+
+import '../css/reg.css'
+import Trans from '../apis/trans';
+
+
+export default function Translate() {
+
+    return (
+        <div>
+            <Trans />
+        </div>
+
     )
 }
