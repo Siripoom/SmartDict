@@ -8,42 +8,33 @@ import "../css/form.css";
 import Nav from "../components/Nav";
 import { useNavigate } from "react-router-dom";
 
-export default function SignIn() {
+export default function SignIn(props) {
     const [userInfo, setUserInfo] = useState(null);
+    const  navigate = useNavigate();
+    useEffect(() => {
+      auth.onAuthStateChanged((user) => {
+        if (user) {
+          //* Sign In
+          setUserInfo(user);
+        } else {
+          //* Sign Out
+          setUserInfo(null);
+        }
+      });
+    }),
+      [userInfo];
+    const login = async() => {
+      try{
+          const provider = new GoogleAuthProvider();
+          auth.useDeviceLanguage();
+          const result = await signInWithPopup(auth, provider)
+          navigate('/')
+      }catch(err){
+        //   alert(err.message);
+      }
+  }
 
-    const navigate = useNavigate();
-
-    useEffect(() => {   
-        auth.onAuthStateChanged((user) => {
-            if (user) {
-                setUserInfo(user);
-                console.log("Auth" , user)
-            } else {
-                setUserInfo(null);
-                window.sessionStorage.clear();
-            }
-        })
-    }, [])
-
-    const login = () => {
-        const provider = new GoogleAuthProvider();
-        auth.useDeviceLanguage();
-        signInWithPopup(auth, provider)
-            .then((result) => {
-                navigate('/')
-            })
-            .catch(err => {
-                alert(err);
-            })
-    }
-
-    const logout = () => {
-        signOut(auth)
-            .then(() => { })
-            .catch(err => {
-                alert(err);
-            })
-    }
+    
 
     const clearPathAndNavigate = () => {
         navigate('/Register');
@@ -52,7 +43,7 @@ export default function SignIn() {
 
     return (
         <div>
-            <Nav user={userInfo} login={login} logout={logout} />
+            {/* <Nav user={userInfo} login={login} logout={logout} /> */}
         <div className="body">
             <div className="Box">
                 <h1 className="text-center">Sign-in</h1>
@@ -77,7 +68,7 @@ export default function SignIn() {
                     <button type="button" className="btn " >Sign-in</button>
                 </div>
                 <div className="text-center">
-                    <button onClick={clearPathAndNavigate}>On account?</button>
+                    <button onClick={clearPathAndNavigate}>No account?</button>
                 </div>
             </div>
         </div>

@@ -1,9 +1,17 @@
 import { Link } from "react-router-dom"
-
+import auth from "../firebase_config";
+import { signInWithPopup, GoogleAuthProvider, signOut } from "firebase/auth";
+import { useNavigate } from "react-router-dom";
 export default function Nav(props) {
 
   const user = props.user;
-
+  const logout = () => {
+    signOut(auth)
+        .then(() => { })
+        .catch(err => {
+            alert(err);
+        })
+}
   return (
     <>
       <div className="navbar bg-base-100">
@@ -62,7 +70,7 @@ export default function Nav(props) {
             <ul tabIndex={0} className="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52">
               <li><Link to = " ">Profile</Link></li>
               <li><Link to = " ">Wordlish</Link></li>
-              <li><button className="btn" onClick={props.logout}>logout</button></li>
+              <li><button className="btn" onClick={logout}>logout</button></li>
             </ul>
           </div>
           ) : (
