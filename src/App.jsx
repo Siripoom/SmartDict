@@ -6,6 +6,8 @@ import Home from "./pages/Home"
 import Translate from './pages/Translate'
 import Grammar from './pages/Grammar'
 import About from './pages/About'
+import Profile from './pages/Profile'
+import Edit from './components/Edit'
 
 function App() {
   return (
@@ -16,7 +18,9 @@ function App() {
           <Route path="/" exact element={<Home/>} />
           <Route path="translate" element={<Translate/>} />
           <Route path="grammar" element={<Grammar/>} />
-          <Route path='About' element={<About />} />
+          <Route path='about' element={<About />} />
+          <Route path='profile' element={<Profile />} />
+          <Route path='edit' element={<Edit />} />
           <Route path="*" element={<Page404/>} />
         </Routes>
       </BrowserRouter>
@@ -24,4 +28,4 @@ function App() {
   )
 }
 
-export default App
+export default App;

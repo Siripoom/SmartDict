@@ -1,24 +1,24 @@
 @tailwind base;
 @tailwind components;
-@tailwind utilities;
+@tailwind utilities;*/
 
 .section-white {
     background: #fff;
     padding: 70px 0;
 }
 
-.card {
+.about-card {
         display: flex;
         justify-content: "space-around";
         align-items: "center";
 }
 
-.card {
+.about-card {
     display: flex;
     align-items: center;
 }
 
-.card {
+.about-card {
     background: #f4f5f6;
     text-align: center;
     margin: 20px 0;
@@ -31,7 +31,7 @@
     transition: all 0.25s ease-in-out;
 }
 
-.card:hover {
+.about-card:hover {
     background: #3956de;
     color: #fff;
 }
@@ -50,7 +50,7 @@
     white-space: pre-line;
 }
 
-.card:hover h3 {
+.about-card:hover h3 {
     color: #ddd;
 }
 
@@ -64,7 +64,7 @@
     font-style: italic;
 }
 
-.section-subtitle {
+.about-subtitle {
     color: acacac;
     font-style: italic;
 }

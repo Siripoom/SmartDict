@@ -37,6 +37,12 @@ export default function Nav() {
               <li>
                 <Link to="about">About</Link>
               </li>
+              <li>
+                <Link to="profile">Profile</Link>
+              </li>
+              <li>
+                <Link to="edit">Edit</Link>
+              </li>
             </ul>
           </div>
           <Link  to="/" className="btn btn-ghost text-xl">SmartDict</Link>
@@ -54,6 +60,12 @@ export default function Nav() {
               </li>
               <li>
                 <Link to="about">About</Link>
+              </li>
+              <li>
+                <Link to="profile">Profile</Link>
+              </li>
+              <li>
+                <Link to="edit">Edit</Link>
               </li>
           </ul>
         </div>
