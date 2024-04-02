@@ -1,5 +1,7 @@
 import React from "react";
 import heroImg from "../assets/Blackboard.png";
+import { Link } from "react-router-dom";
+
 import "./style/hero.css";
 export default function Hero() {
   return (
@@ -16,7 +18,7 @@ export default function Hero() {
             SmartDict! Our user-friendly website
           </p>
           <button className="btn btn-primary mx-2">Grammar</button>
-          <button className="btn btn-primary">Text to Speech</button>
+         <Link to ="Minigame"><button className="btn btn-primary">Challenge</button></Link> 
         </div>
       </div>
     </div>

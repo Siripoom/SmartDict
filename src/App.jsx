@@ -9,6 +9,7 @@ import Grammar from "./pages/Grammar";
 import About from './pages/About'
 import Nav from "./components/Nav";
 import Footer from "./components/Footer";
+import Minigame from "./pages/Minigame";
 import { useState, useEffect } from "react";
 import { auth } from "../src/firebase_config";
 import { signInWithPopup, GoogleAuthProvider, signOut } from "firebase/auth";
@@ -49,6 +50,7 @@ function App() {
           <Route path="about" element={<About />} />
           <Route path="SignIn" element={<SignIn />} />
           <Route path="Register" element={<Register />} />
+          <Route path="Minigame" element={<Minigame />} />
           <Route path="*" element={<Page404 />} />
         </Routes>
         <Footer />

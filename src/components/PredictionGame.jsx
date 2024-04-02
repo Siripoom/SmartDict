@@ -36,7 +36,7 @@ const PredictionGame = () => {
 
   return (
     
-    <div className="max-w-md mx-auto mt-8 p-4 border rounded-lg shadow-lg">
+    <div className="max-w-md mx-auto mt-8 p-4 border rounded-lg shadow-lg my-5 mb-24">
       <h1 className="text-2xl font-semibold mb-4">Prediction Word Game</h1>
       {showScore ? (
         <div>
