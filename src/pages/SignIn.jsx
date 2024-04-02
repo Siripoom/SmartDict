@@ -70,12 +70,12 @@ export default function SignIn(props) {
         <div className="Box">
           <h1 className="text-center text-4xl font-bold">Sign-in</h1>
           <br />
-          <div className="icon">
-            <div className="logo">
+          <div className="icon justify-center">
+            {/* <div className="logo">
               <button type="button" className="btn btn-neutral">
                 <i className="bx bxl-facebook-circle"></i>Facebook
               </button>
-            </div>
+            </div> */}
             <div className="logo">
               <button
                 type="button"
