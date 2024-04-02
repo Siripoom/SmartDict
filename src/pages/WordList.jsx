@@ -58,8 +58,8 @@ function Wordlist(props) {
                 {words.map((word) => (
                     <div className="p-4 border rounded-lg shadow-md" key={word.id}>
                         <h2 className="text-xl font-bold">{word.word}</h2>
-                        <p className="text-gray-700">{word.definitions}</p>
-                        <h4 className="mt-2 text-gray-600 font-bold">{word.partOfSpeech}</h4>
+                        <p className="text">{word.definitions}</p>
+                        <h4 className="mt-2 text font-bold">{word.partOfSpeech}</h4>
                         <button className="mt-4 px-4 py-2 text-white bg-red-500 rounded-md hover:bg-red-600 focus:outline-none focus:bg-red-600" onClick={() => handleDelete(word.id)}>
                             Delete
                         </button>
