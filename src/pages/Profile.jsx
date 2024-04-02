@@ -10,10 +10,9 @@ function Profile() {
           <h1 className="text-center">My Profile</h1>
           <br />
           <hr />
-          <br />
 
           <div>
-          <h1 className='about-profile'><ins>About me </ins></h1> 
+          <h1 className='about-profile'><ins>About me:</ins></h1> 
 
           <div className="pic">
             <div className="w-24 shadow-md">
@@ -39,6 +38,11 @@ function Profile() {
             </div>
             <input type="email" placeholder="Type here" className="input input-bordered input-md  w-full max-w-xs" size={40} maxLength={50} />
           </div>
+
+          <div className="btnProfile">
+                            <button type="reset" className="btn" >Go to back</button>
+                            <button type="submit" className="btn" >Save</button>
+                        </div>
         </div>
       </div>
       </div>
