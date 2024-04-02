@@ -1,0 +1,26 @@
+.header-list {
+    display: flex;
+    align-items: center;
+    border: groove;
+    padding: 10px;
+    width: 90%;
+    resize: none;
+    justify-content: space-between;
+    margin: 30px;
+}
+
+.body-list {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn-delete {
+    display: flex;
+    justify-content: end;
+}
+
+.btn-rename {
+    display: flex;
+    justify-content: end;
+}

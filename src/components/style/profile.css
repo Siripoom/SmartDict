@@ -1,0 +1,56 @@
+.body{ 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.icon{
+    display: flex;
+    justify-content: space-between;
+    margin: 20px;
+}
+
+.btnRig{
+    display: flex;
+    justify-content: space-between;
+    margin: 30px;
+}
+
+.logo button{
+    border-radius: 20px;
+}
+
+
+img{
+    width: 40px;
+    height: 20px;
+}
+
+.form-control{
+    height: 50px;
+    border-radius: 20px;
+}
+
+.Box{
+    border: solid black;
+    padding: 3%;
+    border-radius: 20px;
+    align-items: center;
+    width: auto;
+}
+
+
+.inputBox textarea{
+    width: 100%;
+    height: 200px;
+    resize: none;
+}
+
+.inputBox {
+    width: 300px;
+}
+
+.text-center button{
+    margin-top: 120px;
+}

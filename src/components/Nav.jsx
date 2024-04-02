@@ -41,7 +41,7 @@ export default function Nav() {
                 <Link to="profile">Profile</Link>
               </li>
               <li>
-                <Link to="edit">Edit</Link>
+                <Link to="wordlist">Wordlist</Link>
               </li>
             </ul>
           </div>
@@ -65,7 +65,7 @@ export default function Nav() {
                 <Link to="profile">Profile</Link>
               </li>
               <li>
-                <Link to="edit">Edit</Link>
+                <Link to="wordlist">Wordlist</Link>
               </li>
           </ul>
         </div>
