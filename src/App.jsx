@@ -10,6 +10,8 @@ import About from './pages/About'
 import Nav from "./components/Nav";
 import Footer from "./components/Footer";
 import Minigame from "./pages/Minigame";
+import Profile from "./pages/Profile";
+import Wordlist from "./pages/WordList";
 import { useState, useEffect } from "react";
 import { auth } from "../src/firebase_config";
 import { signInWithPopup, GoogleAuthProvider, signOut } from "firebase/auth";
@@ -44,13 +46,15 @@ function App() {
       <BrowserRouter>
         <Nav user={userInfo} />
         <Routes>
-          <Route path="/" exact element={<Home />} />
+          <Route path="/" exact element={<Home user={userInfo}/>} />
           <Route path="translate" element={<Translate />} />
           <Route path="grammar" element={<Grammar />} />
           <Route path="about" element={<About />} />
-          <Route path="SignIn" element={<SignIn />} />
+          <Route path="SignIn"  element={<SignIn />} />
           <Route path="Register" element={<Register />} />
           <Route path="Minigame" element={<Minigame />} />
+          <Route path="profile" element={<Profile user={userInfo}/>} />
+          <Route path="wordlist" element={<Wordlist user={userInfo}/>} />
           <Route path="*" element={<Page404 />} />
         </Routes>
         <Footer />

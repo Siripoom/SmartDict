@@ -12,7 +12,7 @@ export default function SignIn(props) {
   const [userInfo, setUserInfo] = useState(null);
   const [email, setEmail] = useState("");
   const [pass, setPass] = useState("");
-
+  const [loading, setLoading] = useState(false); // State for loading indicator
   const navigate = useNavigate();
   useEffect(() => {
     auth.onAuthStateChanged((user) => {
@@ -28,9 +28,11 @@ export default function SignIn(props) {
     [userInfo];
   const googleLogin = async () => {
     try {
+      
       const provider = new GoogleAuthProvider();
       auth.useDeviceLanguage();
       const result = await signInWithPopup(auth, provider);
+      console.log(result)
       navigate("/");
     } catch (err) {
       //   alert(err.message);

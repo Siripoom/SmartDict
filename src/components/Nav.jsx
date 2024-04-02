@@ -4,9 +4,12 @@ import { signInWithPopup, GoogleAuthProvider, signOut } from "firebase/auth";
 import { useNavigate } from "react-router-dom";
 export default function Nav(props) {
   const user = props.user;
+  const navigate = useNavigate();
   const logout = () => {
     signOut(auth)
-      .then(() => {})
+      .then(() => {
+        navigate('/')
+      })
       .catch((err) => {
         alert(err);
       });
@@ -88,10 +91,10 @@ export default function Nav(props) {
                   className="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52"
                 >
                   <li>
-                    <Link to=" ">Profile</Link>
+                    <Link to="profile">Profile</Link>
                   </li>
                   <li>
-                    <Link to=" ">Wordlish</Link>
+                    <Link to="wordlist">Word list</Link>
                   </li>
                   <li>
                     <button className="btn" onClick={logout}>

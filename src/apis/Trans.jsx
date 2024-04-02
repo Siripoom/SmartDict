@@ -51,7 +51,7 @@ export default function Trans() {
   const handleFormSubmit = async (event) => {
     event.preventDefault();
     setWord(wordin);
-    setAudioSrc("")
+    setAudioSrc("");
     if (wordin == "") {
       alert("Enter you word");
     } else {
@@ -84,10 +84,10 @@ export default function Trans() {
   return (
     <>
       <div className="body my-5">
-        <div className="Box">
+        <div className="Box p-6">
           <h1 className="text-center text-4xl font-bold ">Translate</h1>
           <br />
-          <div className="flex flex-col w-full lg:flex-row">
+          <div className="flex flex-col lg:flex-row">
             <div className="grid flex-grow h-32 rounded-box place-items-center">
               <div className="mb-3">
                 <div className="label">
@@ -106,7 +106,7 @@ export default function Trans() {
               </div>
             </div>
             <div className="divider divider-horizontal">
-              <i className="bx bx-chevrons-right"></i>
+              <i className="bx bx-chevron-right"></i>
             </div>
             <div className="grid flex-grow h-32 card rounded-box place-items-center">
               <div className="mb-3">
@@ -126,7 +126,9 @@ export default function Trans() {
             </div>
           </div>
           <br />
-          <div className="text-center">
+          <br />
+          <br />
+          <div className="text-center mt-12">
             <button type="submit" className="btn" onClick={handleFormSubmit}>
               Submit
             </button>

@@ -17,7 +17,7 @@ export default function Hero() {
             Struggling to understand or translate a word? Look no further than
             SmartDict! Our user-friendly website
           </p>
-          <button className="btn btn-primary mx-2">Grammar</button>
+          <Link to ="grammar"><button className="btn btn-primary mx-2">Grammar</button></Link>
          <Link to ="Minigame"><button className="btn btn-primary">Challenge</button></Link> 
         </div>
       </div>

@@ -3,8 +3,8 @@ import WordShow from "../apis/WordShow";
 import { AiOutlineArrowRight } from "react-icons/ai";
 import { useParams } from "react-router-dom";
 import axios from "axios"; // Import Axios
-function Word() {
-  
+function Word(props) {
+  const{user} = props
   const [wordData, setWordData] = useState(null); // State to store word data
   const [searchTerm, setSearchTerm] = useState("link");
   const [inputValue, setInputValue] = useState("");
@@ -48,7 +48,7 @@ function Word() {
         </div>
         <div className="divider"></div>
         <div className="ggrid flex-grow h-84 card  rounded-box place-items-center justify-center">
-        <WordShow word={searchTerm} />
+        <WordShow word={searchTerm} userUID={user} />
         </div>
       </div>
     </>

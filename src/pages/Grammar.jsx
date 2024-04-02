@@ -2,7 +2,7 @@ import tenseData from "../data/tenseData";
 export default function Grammar() {
   return (
     <>
-      <div className="container">
+      <div className="container my-3">
         <h2 className="text-5xl text-center font-bold my-3">
           English Tense Structures
         </h2>
