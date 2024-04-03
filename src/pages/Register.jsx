@@ -35,13 +35,15 @@ export default function Register() {
     } else if (pass == "") {
       alert("Enter you Password");
     } else if (pass2 == "") {
-      alert("Enter you Password2");
+      alert("Enter you Confirm Password");
     } else if (pass !== pass2) {
       alert("Enter Password not match");
     } else if (fname == "") {
       alert("Enter you Firstname");
     } else if (lname == "") {
       alert("Enter you Lastname");
+    }else if (photo == "") {
+      alert("Please upload profile");
     } else {
       try {
         setLoading(true); // Start loading
@@ -85,6 +87,8 @@ export default function Register() {
         });
       } catch (error) {
         alert(error.message);
+      }finally{
+        setLoading(false); // Start loading
       }
     }
   };
