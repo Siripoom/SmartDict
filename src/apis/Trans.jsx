@@ -17,7 +17,7 @@ export default function Trans() {
         method: "GET",
         url: "https://voicerss-text-to-speech.p.rapidapi.com/",
         params: {
-          key: "11f0cb9b8ec24ef58d39db8a12443fe6",
+          key: "",
           src: wordin,
           hl: "en-us",
           v: voice,
@@ -26,8 +26,7 @@ export default function Trans() {
           f: "24khz_16bit_stereo",
         },
         headers: {
-          "X-RapidAPI-Key":
-            "04dc07cf1dmshba25fae11f332f0p1faed2jsn29e10bd2dae8",
+          "X-RapidAPI-Key": "",
           "X-RapidAPI-Host": "voicerss-text-to-speech.p.rapidapi.com",
         },
         responseType: "blob",
@@ -66,8 +65,7 @@ export default function Trans() {
         url: "https://google-translate113.p.rapidapi.com/api/v1/translator/text",
         headers: {
           "content-type": "application/x-www-form-urlencoded",
-          "X-RapidAPI-Key":
-            "04dc07cf1dmshba25fae11f332f0p1faed2jsn29e10bd2dae8",
+          "X-RapidAPI-Key": "",
           "X-RapidAPI-Host": "google-translate113.p.rapidapi.com",
         },
         data: encodedParams,

@@ -1,12 +1,10 @@
 import React, { useState, useEffect } from "react";
 import { AiFillHeart } from "react-icons/ai";
 import axios from "axios";
-import { db} from "../firebase_config"; // Assuming you have imported Firebase and initialized it
-import {
-  addDoc,
-  collection,
-} from "firebase/firestore";
-const WordShow = ({ word, userUID }) => { // Pass userUID as a prop
+import { db } from "../firebase_config"; // Assuming you have imported Firebase and initialized it
+import { addDoc, collection } from "firebase/firestore";
+const WordShow = ({ word, userUID }) => {
+  // Pass userUID as a prop
   const [wordInfo, setWordInfo] = useState(null);
   const [error, setError] = useState(null);
 
@@ -16,8 +14,7 @@ const WordShow = ({ word, userUID }) => { // Pass userUID as a prop
         const url = `https://wordsapiv1.p.rapidapi.com/words/${word}`;
         const response = await axios.get(url, {
           headers: {
-            "X-RapidAPI-Key":
-              "04dc07cf1dmshba25fae11f332f0p1faed2jsn29e10bd2dae8", // Replace with your actual API key
+            "X-RapidAPI-Key": "", // Replace with your actual API key
             "X-RapidAPI-Host": "wordsapiv1.p.rapidapi.com",
           },
         });
@@ -39,11 +36,11 @@ const WordShow = ({ word, userUID }) => { // Pass userUID as a prop
           userId: userUID,
           word: wordInfo.word,
           definitions: wordInfo.results[0].definition,
-          partOfSpeech:wordInfo.results[0].partOfSpeech
+          partOfSpeech: wordInfo.results[0].partOfSpeech,
         };
         await addDoc(wordRef, docData);
         console.log("Word saved to Firestore");
-        alert("Word saved to word list.")
+        alert("Word saved to word list.");
       } else {
         console.error("User UID or word information not available");
       }
